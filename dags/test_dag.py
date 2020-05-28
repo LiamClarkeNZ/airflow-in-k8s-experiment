@@ -6,60 +6,60 @@ from airflow.utils.dates import days_ago
 
 import logging
 
-try:
-    from .libs import FOO
-except Exception as e:
-    logging.warning(e)
-    logging.warning(__file__)
-    logging.warning(__name__)
-    logging.warning(__package__)
-    import sys
-    logging.warning(sys.path)
-
-try:
-    from libs import FOO
-except Exception as e:
-    logging.warning(e)
-    logging.warning(__file__)
-    logging.warning(__name__)
-    logging.warning(__package__)
-    import sys
-    logging.warning(sys.path)
-try:
-    from dags.libs import FOO
-    logging.warning("dags.libs.imported")
-except Exception as e:
-    logging.warning(e)
-    logging.warning(__file__)
-    logging.warning(__name__)
-    logging.warning(__package__)
-    import sys
-    logging.warning(sys.path)
-
-
-try:
-    from dags import libs
-    logging.warning("dags.libs.only.imported")
-    logging.warning(libs.FOO)
-except Exception as e:
-    logging.warning(e)
-    logging.warning(__file__)
-    logging.warning(__name__)
-    logging.warning(__package__)
-    import sys
-    logging.warning(sys.path)
-
-
-try:
-    from repo.dags.libs import FOO
-    logging.warning("repo.dags.libs.imported")
-except Exception as e:
-    logging.warning(e)
-    logging.warning(__file__)
-    logging.warning(__name__)
-    logging.warning(__package__)
-    import sys
-    logging.warning(sys.path)
+# try:
+#     from .libs import FOO
+# except Exception as e:
+#     logging.warning(e)
+#     logging.warning(__file__)
+#     logging.warning(__name__)
+#     logging.warning(__package__)
+#     import sys
+#     logging.warning(sys.path)
+#
+# try:
+#     from libs import FOO
+# except Exception as e:
+#     logging.warning(e)
+#     logging.warning(__file__)
+#     logging.warning(__name__)
+#     logging.warning(__package__)
+#     import sys
+#     logging.warning(sys.path)
+# try:
+#     from dags.libs import FOO
+#     logging.warning("dags.libs.imported")
+# except Exception as e:
+#     logging.warning(e)
+#     logging.warning(__file__)
+#     logging.warning(__name__)
+#     logging.warning(__package__)
+#     import sys
+#     logging.warning(sys.path)
+#
+#
+# try:
+#     from dags import libs
+#     logging.warning("dags.libs.only.imported")
+#     logging.warning(libs.FOO)
+# except Exception as e:
+#     logging.warning(e)
+#     logging.warning(__file__)
+#     logging.warning(__name__)
+#     logging.warning(__package__)
+#     import sys
+#     logging.warning(sys.path)
+#
+#
+# try:
+#     from repo.dags.libs import FOO
+#     logging.warning("repo.dags.libs.imported")
+# except Exception as e:
+#     logging.warning(e)
+#     logging.warning(__file__)
+#     logging.warning(__name__)
+#     logging.warning(__package__)
+#     import sys
+#     logging.warning(sys.path)
 
 try:
     from dags.libs2.test import da_func
@@ -69,8 +69,10 @@ except Exception as e:
     logging.warning(__file__)
     logging.warning(__name__)
     logging.warning(__package__)
+    logging.warning(__path__)
     import sys
     logging.warning(sys.path)
+    logging.warning(sys.modules)
 
 import os
 
