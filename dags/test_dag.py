@@ -63,12 +63,14 @@ import logging
 
 
 import os
+import sys
 
 logging.warning(os.listdir("/opt/airflow/dags/repo/dags/"))
 logging.warning(os.listdir("/opt/airflow/dags/repo/dags/libs"))
 logging.warning(os.listdir("/opt/airflow/dags/repo/dags/libs2"))
 
 try:
+    sys.path.insert(0, os.path.join(os.path.dirname(__file__), '.'))
     from dags.libs2.test import da_func
     logging.warning("da_func.imported")
 except Exception as e:
@@ -76,10 +78,6 @@ except Exception as e:
     logging.warning(__file__)
     logging.warning(__name__)
     logging.warning(__package__)
-    import sys
-    logging.warning(sys.path)
-    logging.warning(sys.modules)
-    logging.warning(os.environ["PYTHONPATH"])
 
 
 
