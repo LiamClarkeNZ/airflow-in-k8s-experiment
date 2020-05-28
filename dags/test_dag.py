@@ -73,8 +73,9 @@ try:
     print("XXXXXX")
     print(os.getcwd())
     sys.path.insert(0, os.path.join(os.path.dirname(__file__), '.'))
-    from libs2.test import da_func
-    logging.error("da_func.imported")
+    from libs import FOO
+    logging.error(FOO)
+    print("YYYYYY")
 except Exception as e:
     logging.warning(e)
     logging.warning(__file__)
