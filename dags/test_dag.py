@@ -4,15 +4,17 @@ from airflow.operators.bash_operator import BashOperator
 from airflow.operators.python_operator import PythonOperator
 from airflow.utils.dates import days_ago
 
+import logging
+
 try:
     from .libs import FOO
 except Exception as e:
-    print(e)
-    print(__file__)
-    print(__name__)
-    print(__package__)
+    logging.warning(e)
+    logging.warning(__file__)
+    logging.warning(__name__)
+    logging.warning(__package__)
     import sys
-    print(sys.path)
+    logging.warning(sys.path)
     raise e
 
 default_args = {
