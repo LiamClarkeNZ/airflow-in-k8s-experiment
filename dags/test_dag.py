@@ -61,6 +61,13 @@ import logging
 #     import sys
 #     logging.warning(sys.path)
 
+
+import os
+
+logging.warning(os.listdir("/opt/airflow/dags/repo/dags/"))
+logging.warning(os.listdir("/opt/airflow/dags/repo/dags/libs"))
+logging.warning(os.listdir("/opt/airflow/dags/repo/dags/libs2"))
+
 try:
     from dags.libs2.test import da_func
     logging.warning("da_func.imported")
@@ -69,16 +76,12 @@ except Exception as e:
     logging.warning(__file__)
     logging.warning(__name__)
     logging.warning(__package__)
-    logging.warning(__path__)
     import sys
     logging.warning(sys.path)
     logging.warning(sys.modules)
+    logging.warning(os.environ["PYTHONPATH"])
 
-import os
 
-logging.warning(os.listdir("/opt/airflow/dags/repo/dags/"))
-logging.warning(os.listdir("/opt/airflow/dags/repo/dags/libs"))
-logging.warning(os.listdir("/opt/airflow/dags/repo/dags/libs2"))
 
 default_args = {
     'owner': 'jeff',
