@@ -6,14 +6,15 @@ from airflow.utils.dates import days_ago
 
 try:
     from .libs import FOO
-except ImportError as e:
+except Exception as e:
     print(e)
     print(__file__)
     print(__name__)
     print(__package__)
     import sys
     print(sys.path)
-    
+    raise e
+
 default_args = {
     'owner': 'jeff',
     'depends_on_past': False,
