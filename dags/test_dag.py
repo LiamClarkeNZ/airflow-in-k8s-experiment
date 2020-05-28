@@ -4,8 +4,16 @@ from airflow.operators.bash_operator import BashOperator
 from airflow.operators.python_operator import PythonOperator
 from airflow.utils.dates import days_ago
 
-from .libs import FOO
-
+try:
+    from .libs import FOO
+except ImportError as e:
+    print(e)
+    print(__file__)
+    print(__name__)
+    print(__package__)
+    import sys
+    print(sys.path)
+    
 default_args = {
     'owner': 'jeff',
     'depends_on_past': False,

@@ -31,7 +31,7 @@ data:
     [kubernetes]
     airflow_configmap = airflow-config
     namespace = airflow
-    git_repo = https://github.com/jtnz/airflow-in-k8s-experiment.git
+    git_repo = https://github.com/LiamClarkeNZ/airflow-in-k8s-experiment.git
     git_branch = master
     git_subpath = dags
     git_dags_folder_mount_point = /opt/airflow/dags
