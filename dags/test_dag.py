@@ -70,9 +70,10 @@ logging.warning(os.listdir("/opt/airflow/dags/repo/dags/libs"))
 logging.warning(os.listdir("/opt/airflow/dags/repo/dags/libs2"))
 
 try:
+    print("XXXXXX")
     print(os.getcwd())
     sys.path.insert(0, os.path.join(os.path.dirname(__file__), '.'))
-    from dags.libs2.test import da_func
+    from libs2.test import da_func
     logging.warning("da_func.imported")
 except Exception as e:
     logging.warning(e)
