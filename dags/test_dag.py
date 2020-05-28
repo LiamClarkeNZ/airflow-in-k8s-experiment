@@ -64,6 +64,7 @@ except Exception as e:
 import os
 
 logging.warning(os.listdir("/opt/airflow/dags/repo/dags/"))
+logging.warning(os.listdir("/opt/airflow/dags/repo/dags/libs"))
 
 default_args = {
     'owner': 'jeff',
