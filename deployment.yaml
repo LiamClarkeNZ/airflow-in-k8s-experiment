@@ -83,7 +83,7 @@ spec:
         image: k8s.gcr.io/git-sync:v3.1.6
         env:
         - name: GIT_SYNC_REPO
-          value: https://github.com/jtnz/airflow-in-k8s-experiment.git
+          value: https://github.com/LiamClarkeNZ/airflow-in-k8s-experiment.git
         - name: GIT_SYNC_BRANCH
           value: master
         - name: GIT_SYNC_DEST

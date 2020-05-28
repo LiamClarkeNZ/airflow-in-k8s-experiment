@@ -17,6 +17,29 @@ except Exception as e:
     logging.warning(sys.path)
     raise e
 
+
+try:
+    from dags.libs import FOO
+except Exception as e:
+    logging.warning(e)
+    logging.warning(__file__)
+    logging.warning(__name__)
+    logging.warning(__package__)
+    import sys
+    logging.warning(sys.path)
+    raise e
+
+try:
+    from repo.dags.libs import FOO
+except Exception as e:
+    logging.warning(e)
+    logging.warning(__file__)
+    logging.warning(__name__)
+    logging.warning(__package__)
+    import sys
+    logging.warning(sys.path)
+    raise e
+
 default_args = {
     'owner': 'jeff',
     'depends_on_past': False,
