@@ -15,11 +15,11 @@ except Exception as e:
     logging.warning(__package__)
     import sys
     logging.warning(sys.path)
-    raise e
 
 
 try:
     from dags.libs import FOO
+    logging.warning("dags.libs.imported")
 except Exception as e:
     logging.warning(e)
     logging.warning(__file__)
@@ -27,10 +27,10 @@ except Exception as e:
     logging.warning(__package__)
     import sys
     logging.warning(sys.path)
-    raise e
 
 try:
     from repo.dags.libs import FOO
+    logging.warning("repo.dags.libs.imported")
 except Exception as e:
     logging.warning(e)
     logging.warning(__file__)
@@ -38,7 +38,6 @@ except Exception as e:
     logging.warning(__package__)
     import sys
     logging.warning(sys.path)
-    raise e
 
 default_args = {
     'owner': 'jeff',
