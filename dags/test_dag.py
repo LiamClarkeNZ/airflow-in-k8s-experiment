@@ -72,8 +72,8 @@ logging.warning(os.listdir("/opt/airflow/dags/repo/dags/libs2"))
 try:
     print("XXXXXX")
     print(os.getcwd())
-    sys.path.insert(0, os.path.join(os.path.dirname(__file__), '.'))
-    from libs import FOO
+    # sys.path.insert(0, os.path.join(os.path.dirname(__file__), '.'))
+    from dags.repo.dags.libs import FOO
     logging.error(FOO)
     print("YYYYYY")
 except Exception as e:
